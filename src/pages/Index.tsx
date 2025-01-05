@@ -11,7 +11,7 @@ const Index = () => {
       <div className="mx-auto max-w-7xl space-y-8">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-foreground">DeFi Risk Assessment</h1>
+            <h1 className="text-3xl font-bold text-foreground">Realtime Credit Risk Assessment</h1>
             <p className="mt-2 text-muted-foreground">Decentralized Credit Risk Analysis Platform</p>
           </div>
           <div className="flex gap-4">
