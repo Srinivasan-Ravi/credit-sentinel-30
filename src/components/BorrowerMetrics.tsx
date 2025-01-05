@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Speedometer } from "@/components/ui/speedometer";
-import { ShieldCheck, AlertTriangle } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 export const BorrowerMetrics = () => {
   return (
