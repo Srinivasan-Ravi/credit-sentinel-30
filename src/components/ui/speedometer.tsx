@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 
 interface SpeedometerProps {
@@ -14,14 +14,8 @@ export const Speedometer = ({
   className,
   colorClass = "text-primary",
 }: SpeedometerProps) => {
-  const [currentRotation, setCurrentRotation] = useState(0);
-  
   // Convert value to rotation degrees (0-180 degrees)
-  const targetRotation = (value / 100) * 180;
-
-  useEffect(() => {
-    setCurrentRotation(targetRotation);
-  }, [value, targetRotation]);
+  const rotation = (value / 100) * 180;
 
   return (
     <div className={cn("relative w-full max-w-[200px] mx-auto", className)}>
@@ -33,27 +27,14 @@ export const Speedometer = ({
         
         {/* Needle */}
         <div 
-          className="absolute left-1/2 bottom-0 h-[90px] w-1 origin-bottom transition-transform duration-1000"
+          className="absolute left-1/2 bottom-0 h-[90px] w-1 origin-bottom"
           style={{ 
-            transform: `translateX(-50%) rotate(${currentRotation}deg)`,
+            transform: `translateX(-50%) rotate(${rotation}deg)`,
+            transition: "transform 1s cubic-bezier(0.4, 0, 0.2, 1)",
           }}
         >
           <div className={cn("w-1 h-full rounded-full shadow-lg", colorClass)}></div>
           <div className={cn("absolute -top-1 left-1/2 w-3 h-3 -translate-x-1/2 rounded-full shadow-lg", colorClass)}></div>
-        </div>
-        
-        {/* Tick marks */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-between px-4">
-          {[...Array(5)].map((_, i) => (
-            <div 
-              key={i} 
-              className="h-2 w-0.5 bg-muted-foreground/30"
-              style={{
-                transform: `rotate(${(i * 45)}deg) translateY(-40px)`,
-                transformOrigin: 'bottom center'
-              }}
-            />
-          ))}
         </div>
         
         {/* Value labels */}
