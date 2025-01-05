@@ -1,6 +1,8 @@
 import { CreditScore } from "@/components/CreditScore";
 import { RiskFactors } from "@/components/RiskFactors";
 import { UserProfile } from "@/components/UserProfile";
+import { BorrowerMetrics } from "@/components/BorrowerMetrics";
+import { LenderMetrics } from "@/components/LenderMetrics";
 import { Bitcoin, Globe, Shield } from "lucide-react";
 
 const Index = () => {
@@ -19,7 +21,7 @@ const Index = () => {
           </div>
         </div>
         
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-8">
             <div className="rounded-lg border border-primary/20 bg-black/20 p-6 backdrop-blur">
               <CreditScore />
@@ -27,9 +29,17 @@ const Index = () => {
             <div className="rounded-lg border border-primary/20 bg-black/20 p-6 backdrop-blur">
               <RiskFactors />
             </div>
+            <div className="rounded-lg border border-primary/20 bg-black/20 p-6 backdrop-blur">
+              <BorrowerMetrics />
+            </div>
           </div>
-          <div className="rounded-lg border border-primary/20 bg-black/20 p-6 backdrop-blur">
-            <UserProfile />
+          <div className="space-y-8">
+            <div className="rounded-lg border border-primary/20 bg-black/20 p-6 backdrop-blur">
+              <UserProfile />
+            </div>
+            <div className="rounded-lg border border-primary/20 bg-black/20 p-6 backdrop-blur">
+              <LenderMetrics />
+            </div>
           </div>
         </div>
       </div>
