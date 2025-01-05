@@ -33,8 +33,8 @@ export const Speedometer = ({
             transition: "transform 1s cubic-bezier(0.4, 0, 0.2, 1)",
           }}
         >
-          <div className={cn("w-1 h-full rounded-full", colorClass)}></div>
-          <div className={cn("absolute -top-1 left-1/2 w-3 h-3 -translate-x-1/2 rounded-full", colorClass)}></div>
+          <div className={cn("w-1 h-full rounded-full shadow-lg", colorClass)}></div>
+          <div className={cn("absolute -top-1 left-1/2 w-3 h-3 -translate-x-1/2 rounded-full shadow-lg", colorClass)}></div>
         </div>
         
         {/* Value labels */}
