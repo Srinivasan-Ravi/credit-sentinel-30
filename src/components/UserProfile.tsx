@@ -1,12 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { User, Mail, Phone, MapPin, Database, Network, Activity } from "lucide-react";
+import { User, Mail, Phone, MapPin, Database, Network, Activity, Briefcase, Building, FileText } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export const UserProfile = () => {
   const [lastActivity, setLastActivity] = useState("2 minutes ago");
   const [networkStatus, setNetworkStatus] = useState({
-    ethereum: true,
-    polygon: true
+    traditional: true,
+    defi: true
   });
 
   useEffect(() => {
@@ -15,8 +15,8 @@ export const UserProfile = () => {
       setLastActivity(activities[Math.floor(Math.random() * activities.length)]);
       
       setNetworkStatus(prev => ({
-        ethereum: Math.random() > 0.1,
-        polygon: Math.random() > 0.1
+        traditional: Math.random() > 0.1,
+        defi: Math.random() > 0.1
       }));
     }, 5000);
 
@@ -29,7 +29,7 @@ export const UserProfile = () => {
         <CardTitle className="flex items-center justify-between text-xl font-semibold">
           <div className="flex items-center gap-2">
             <Database className="h-5 w-5 text-primary" />
-            Wallet Profile
+            Financial Profile
           </div>
           <Activity className="h-5 w-5 text-green-500 animate-pulse" />
         </CardTitle>
@@ -39,33 +39,55 @@ export const UserProfile = () => {
           <div className="flex items-center space-x-4">
             <User className="h-5 w-5 text-primary" />
             <div>
-              <p className="text-sm font-medium text-foreground">John.eth</p>
-              <p className="text-sm text-muted-foreground">ID: 0x1234...5678</p>
+              <p className="text-sm font-medium text-foreground">John Smith</p>
+              <p className="text-sm text-muted-foreground">Premium Member</p>
             </div>
           </div>
+          
           <div className="flex items-center space-x-4">
-            <Mail className="h-5 w-5 text-primary" />
-            <p className="text-sm text-foreground">john.eth@ens.domains</p>
+            <Briefcase className="h-5 w-5 text-primary" />
+            <div>
+              <p className="text-sm font-medium text-foreground">Senior Developer</p>
+              <p className="text-sm text-muted-foreground">Annual Income: $120,000</p>
+            </div>
           </div>
+
+          <div className="flex items-center space-x-4">
+            <Building className="h-5 w-5 text-primary" />
+            <div>
+              <p className="text-sm font-medium text-foreground">Property Assets</p>
+              <p className="text-sm text-muted-foreground">2 Properties, Total Value: $850,000</p>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <FileText className="h-5 w-5 text-primary" />
+            <div>
+              <p className="text-sm font-medium text-foreground">Tax Status</p>
+              <p className="text-sm text-muted-foreground">Filed for 2023, Next Due: April 2024</p>
+            </div>
+          </div>
+
           <div className="flex items-center space-x-4">
             <Network className="h-5 w-5 text-primary" />
             <div className="flex flex-col gap-1">
-              <p className="text-sm text-foreground">Connected Networks:</p>
+              <p className="text-sm text-foreground">Financial Networks:</p>
               <div className="flex gap-2">
-                <span className={`text-xs px-2 py-1 rounded-full ${networkStatus.ethereum ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}`}>
-                  Ethereum {networkStatus.ethereum ? '✓' : '×'}
+                <span className={`text-xs px-2 py-1 rounded-full ${networkStatus.traditional ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}`}>
+                  Traditional Banking {networkStatus.traditional ? '✓' : '×'}
                 </span>
-                <span className={`text-xs px-2 py-1 rounded-full ${networkStatus.polygon ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}`}>
-                  Polygon {networkStatus.polygon ? '✓' : '×'}
+                <span className={`text-xs px-2 py-1 rounded-full ${networkStatus.defi ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}`}>
+                  DeFi {networkStatus.defi ? '✓' : '×'}
                 </span>
               </div>
             </div>
           </div>
+
           <div className="flex items-center space-x-4">
-            <MapPin className="h-5 w-5 text-primary" />
+            <Activity className="h-5 w-5 text-primary" />
             <div className="flex flex-col">
-              <p className="text-sm text-foreground">Decentraland: -12, 45</p>
-              <p className="text-xs text-muted-foreground">Last active: {lastActivity}</p>
+              <p className="text-sm text-foreground">Last Transaction: $250.00</p>
+              <p className="text-xs text-muted-foreground">Activity: {lastActivity}</p>
             </div>
           </div>
         </div>
