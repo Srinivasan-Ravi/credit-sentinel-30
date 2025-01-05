@@ -58,7 +58,6 @@ export const RiskFactors = () => {
               <Progress 
                 value={factor.score} 
                 className="h-2 bg-muted"
-                indicatorClassName={`bg-gradient-to-r from-primary to-accent transition-all duration-500 ease-in-out`}
               />
             </div>
           ))}

@@ -3,6 +3,7 @@ import { RiskFactors } from "@/components/RiskFactors";
 import { UserProfile } from "@/components/UserProfile";
 import { BorrowerMetrics } from "@/components/BorrowerMetrics";
 import { LenderMetrics } from "@/components/LenderMetrics";
+import { CustomerActivity } from "@/components/CustomerActivity";
 import { Bitcoin, Globe, Shield } from "lucide-react";
 
 const Index = () => {
@@ -39,6 +40,9 @@ const Index = () => {
             </div>
             <div className="rounded-lg border border-primary/20 bg-black/20 p-6 backdrop-blur">
               <LenderMetrics />
+            </div>
+            <div className="rounded-lg border border-primary/20 bg-black/20 p-6 backdrop-blur">
+              <CustomerActivity />
             </div>
           </div>
         </div>
